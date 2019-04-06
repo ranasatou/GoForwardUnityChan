@@ -32,9 +32,9 @@ public class CubeController : MonoBehaviour {
 
     // キューブが地面に接触する時と積み重なるときに効果音
     void OnCollisionEnter2D(Collision2D collision) {
-       
+        if (collision.gameObject.tag == "GroundTag" || collision.gameObject.tag == "CubeTag") {
             GetComponent<AudioSource>().Play();
-            //Debug.Log(audioSource);
-
+            Debug.Log(collision.gameObject.name);
+        }
     }
 }
